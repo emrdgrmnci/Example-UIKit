@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "edcarouselspm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/emrdgrmnci/EDCarouselSPM.git",
+      "state" : {
+        "revision" : "74195699e0910588a750faae389522a3064533ec",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}
