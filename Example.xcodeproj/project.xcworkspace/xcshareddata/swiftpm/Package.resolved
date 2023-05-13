@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/emrdgrmnci/EDCarouselSPM.git",
       "state" : {
-        "revision" : "74195699e0910588a750faae389522a3064533ec",
-        "version" : "0.0.1"
+        "revision" : "8e17fdd8674a2a2a59421b6ccaa390e307b642e4",
+        "version" : "0.0.2"
       }
     }
   ],

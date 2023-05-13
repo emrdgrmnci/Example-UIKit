@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="etr-Km-zaj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,13 +20,22 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-Ty-ffC">
                                 <rect key="frame" x="20" y="95" width="353" height="658.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j2f-cK-r1Y" customClass="CarouselFlowLayout" customModule="EDCarousel">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j2f-cK-r1Y" customClass="CarouselFlowLayout" customModule="EDCarouselSPM">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ExampleCollectionViewCell" id="3wm-Z5-uzN" customClass="ExampleCollectionViewCell" customModule="Example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Ek-68-sKo">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erh-Gi-dMj">
                                 <rect key="frame" x="16" y="804" width="24" height="14"/>
@@ -33,7 +43,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="didTapOnPreviousButton:" destination="etr-Km-zaj" eventType="touchUpInside" id="ucb-Yf-aDY"/>
+                                    <action selector="didTapOnPreviousButton:" destination="etr-Km-zaj" eventType="touchUpInside" id="xwH-eP-Cyg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KM6-Ns-mah">
@@ -42,10 +52,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
-                                    <action selector="didTapOnNextButton:" destination="etr-Km-zaj" eventType="touchUpInside" id="g6l-iu-D33"/>
+                                    <action selector="didTapOnNextButton:" destination="etr-Km-zaj" eventType="touchUpInside" id="WlV-bQ-01O"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oHs-X2-8v4" customClass="CustomPageControl" customModule="Example" customModuleProvider="target">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oHs-X2-8v4" customClass="CustomPageControl" customModule="EDCarouselSPM">
                                 <rect key="frame" x="107" y="763" width="179" height="26"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="currentPageImage" value="currentpageindicator"/>
@@ -77,11 +87,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="closeButton" destination="WCx-JM-aQM" id="2cX-Bb-MmI"/>
-                        <outlet property="collectionView" destination="Dda-Ty-ffC" id="SbJ-FJ-Z3x"/>
-                        <outlet property="nextButton" destination="KM6-Ns-mah" id="ajQ-CJ-1t6"/>
-                        <outlet property="pageControl" destination="oHs-X2-8v4" id="N3G-Lw-rb1"/>
-                        <outlet property="previousButton" destination="Erh-Gi-dMj" id="iAU-gl-T5i"/>
+                        <outlet property="closeButton" destination="WCx-JM-aQM" id="MuR-U3-abN"/>
+                        <outlet property="collectionView" destination="Dda-Ty-ffC" id="ltQ-Bd-w2C"/>
+                        <outlet property="nextButton" destination="KM6-Ns-mah" id="kY8-o4-VRn"/>
+                        <outlet property="pageControl" destination="oHs-X2-8v4" id="FYe-WP-M2A"/>
+                        <outlet property="previousButton" destination="Erh-Gi-dMj" id="vVN-GC-CBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUp-fZ-bOV" sceneMemberID="firstResponder"/>

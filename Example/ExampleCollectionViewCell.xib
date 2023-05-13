@@ -66,9 +66,9 @@
                 <constraint firstAttribute="trailing" secondItem="VKB-FW-J4d" secondAttribute="trailing" id="zKS-v7-2Eo"/>
             </constraints>
             <connections>
-                <outlet property="imageView" destination="qpM-7K-VSC" id="Uxc-rQ-O87"/>
-                <outlet property="subtitleLabel" destination="u2z-nv-UFp" id="yfA-Yi-vsc"/>
-                <outlet property="titleLabel" destination="1Lg-7D-g6Y" id="hOa-FL-GCe"/>
+                <outlet property="imageView" destination="qpM-7K-VSC" id="2Ku-Mt-Fwg"/>
+                <outlet property="subtitleLabel" destination="u2z-nv-UFp" id="bU2-8g-qE7"/>
+                <outlet property="titleLabel" destination="1Lg-7D-g6Y" id="lTf-sZ-V1n"/>
             </connections>
             <point key="canvasLocation" x="-113" y="-38"/>
         </collectionViewCell>
