@@ -10,27 +10,32 @@ import XCTest
 
 final class ExampleTests: XCTestCase {
 
+    var viewModel: ExampleViewModel!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUpWithError()
+        viewModel = ExampleViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        super.tearDownWithError()
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testImagesInitialization() throws {
+            let images = try XCTUnwrap(viewModel.images.value)
+            XCTAssertEqual(images.count, 6, "Expected images count to be 6")
+            XCTAssertEqual(images[0].color, UIColor(named: "dark")!, "Expected first image color to be dark")
+            XCTAssertEqual(images[0].title, "Lorem ipsum dolor set amet", "Expected first image title to be 'Lorem ipsum dolor set amet'")
+            XCTAssertEqual(images[1].color, UIColor(named: "purple")!, "Expected second image color to be purple")
+            XCTAssertEqual(images[1].title, "Lorem ipsum dolor set amet", "Expected second image title to be 'Lorem ipsum dolor set amet'")
+            XCTAssertEqual(images[2].color, UIColor(named: "yellow")!, "Expected third image color to be yellow")
+            XCTAssertEqual(images[2].title, "Lorem ipsum dolor set amet", "Expected third image title to be 'Lorem ipsum dolor set amet'")
+            XCTAssertEqual(images[3].color, UIColor(named: "cyan")!, "Expected fourth image color to be cyan")
+            XCTAssertEqual(images[3].title, "Lorem ipsum dolor set amet", "Expected fourth image title to be 'Lorem ipsum dolor set amet'")
+            XCTAssertEqual(images[4].color, UIColor(named: "red")!, "Expected fifth image color to be red")
+            XCTAssertEqual(images[4].title, "Lorem ipsum dolor set amet", "Expected fifth image title to be 'Lorem ipsum dolor set amet'")
+            XCTAssertEqual(images[5].color, UIColor(named: "green")!, "Expected sixth image color to be green")
+            XCTAssertEqual(images[5].title, "Lorem ipsum dolor set amet", "Expected sixth image title to be 'Lorem ipsum dolor set amet'")
         }
-    }
-
 }
